@@ -17,6 +17,9 @@ class CreateAccountView :UIViewController,UIImagePickerControllerDelegate, UINav
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+            view.addGestureRecognizer(tapGesture)
+        
         imageView.isUserInteractionEnabled = true
         imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onImage)))
         
@@ -59,9 +62,11 @@ class CreateAccountView :UIViewController,UIImagePickerControllerDelegate, UINav
         }
     }
     
+    
     @IBAction func onBack(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
     
     func showError(message:String){
             let dialog = UIAlertController(title: "エラー", message: message, preferredStyle: .alert)
