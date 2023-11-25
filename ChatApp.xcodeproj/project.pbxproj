@@ -16,6 +16,8 @@
 		655C6E2A2B0E13DA005FBE51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 655C6E292B0E13DA005FBE51 /* Assets.xcassets */; };
 		655C6E2D2B0E13DA005FBE51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 655C6E2B2B0E13DA005FBE51 /* LaunchScreen.storyboard */; };
 		655C6E352B0E1FED005FBE51 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 655C6E342B0E1FED005FBE51 /* GoogleService-Info.plist */; };
+		655C6E372B11F7BE005FBE51 /* AuthHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655C6E362B11F7BE005FBE51 /* AuthHelper.swift */; };
+		655C6E392B11F911005FBE51 /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655C6E382B11F911005FBE51 /* CreateAccountView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		655C6E2C2B0E13DA005FBE51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		655C6E2E2B0E13DA005FBE51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		655C6E342B0E1FED005FBE51 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		655C6E362B11F7BE005FBE51 /* AuthHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHelper.swift; sourceTree = "<group>"; };
+		655C6E382B11F911005FBE51 /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
 		B3E7ED6FADC1AF89BD05B5C2 /* Pods-ChatApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatApp.debug.xcconfig"; path = "Target Support Files/Pods-ChatApp/Pods-ChatApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C0D2BE1A4F569E4676CC89E6 /* Pods-ChatApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatApp.release.xcconfig"; path = "Target Support Files/Pods-ChatApp/Pods-ChatApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,6 +80,8 @@
 				655C6E2E2B0E13DA005FBE51 /* Info.plist */,
 				655C6E342B0E1FED005FBE51 /* GoogleService-Info.plist */,
 				655C6E262B0E13D8005FBE51 /* ChatApp.xcdatamodeld */,
+				655C6E362B11F7BE005FBE51 /* AuthHelper.swift */,
+				655C6E382B11F911005FBE51 /* CreateAccountView.swift */,
 			);
 			path = ChatApp;
 			sourceTree = "<group>";
@@ -86,7 +92,6 @@
 				B3E7ED6FADC1AF89BD05B5C2 /* Pods-ChatApp.debug.xcconfig */,
 				C0D2BE1A4F569E4676CC89E6 /* Pods-ChatApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -214,8 +219,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				655C6E392B11F911005FBE51 /* CreateAccountView.swift in Sources */,
 				655C6E222B0E13D8005FBE51 /* ViewController.swift in Sources */,
 				655C6E282B0E13D8005FBE51 /* ChatApp.xcdatamodeld in Sources */,
+				655C6E372B11F7BE005FBE51 /* AuthHelper.swift in Sources */,
 				655C6E1E2B0E13D8005FBE51 /* AppDelegate.swift in Sources */,
 				655C6E202B0E13D8005FBE51 /* SceneDelegate.swift in Sources */,
 			);
@@ -280,7 +287,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -343,7 +350,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -377,6 +384,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -405,6 +413,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
