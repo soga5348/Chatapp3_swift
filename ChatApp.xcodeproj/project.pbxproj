@@ -18,6 +18,7 @@
 		655C6E352B0E1FED005FBE51 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 655C6E342B0E1FED005FBE51 /* GoogleService-Info.plist */; };
 		655C6E372B11F7BE005FBE51 /* AuthHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655C6E362B11F7BE005FBE51 /* AuthHelper.swift */; };
 		655C6E392B11F911005FBE51 /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655C6E382B11F911005FBE51 /* CreateAccountView.swift */; };
+		6569A0932B121E6800C4757B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6569A0922B121E6800C4757B /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		655C6E342B0E1FED005FBE51 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		655C6E362B11F7BE005FBE51 /* AuthHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHelper.swift; sourceTree = "<group>"; };
 		655C6E382B11F911005FBE51 /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
+		6569A0922B121E6800C4757B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		B3E7ED6FADC1AF89BD05B5C2 /* Pods-ChatApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatApp.debug.xcconfig"; path = "Target Support Files/Pods-ChatApp/Pods-ChatApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C0D2BE1A4F569E4676CC89E6 /* Pods-ChatApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatApp.release.xcconfig"; path = "Target Support Files/Pods-ChatApp/Pods-ChatApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -53,6 +55,7 @@
 		655C6E112B0E13D8005FBE51 = {
 			isa = PBXGroup;
 			children = (
+				6569A0922B121E6800C4757B /* LoginView.swift */,
 				655C6E1C2B0E13D8005FBE51 /* ChatApp */,
 				655C6E1B2B0E13D8005FBE51 /* Products */,
 				70A0BE7E04923531BB85AD5A /* Pods */,
@@ -220,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				655C6E392B11F911005FBE51 /* CreateAccountView.swift in Sources */,
+				6569A0932B121E6800C4757B /* LoginView.swift in Sources */,
 				655C6E222B0E13D8005FBE51 /* ViewController.swift in Sources */,
 				655C6E282B0E13D8005FBE51 /* ChatApp.xcdatamodeld in Sources */,
 				655C6E372B11F7BE005FBE51 /* AuthHelper.swift in Sources */,
