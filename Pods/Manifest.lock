@@ -876,6 +876,9 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Firestore
   - Firebase/Storage
+  - FirebaseAuthUI
+  - FirebaseEmailAuthUI
+  - FirebaseGoogleAuthUI
   - FirebaseUI
   - FirebaseUI/Storage
   - SDWebImage
@@ -967,6 +970,6 @@ SPEC CHECKSUMS:
   RecaptchaInterop: 7d1a4a01a6b2cb1610a47ef3f85f0c411434cb21
   SDWebImage: 7ac2b7ddc5e8484c79aa90fc4e30b149d6a2c88f
 
-PODFILE CHECKSUM: b81eab050aadf6bb22b9510bf9a96708820dfa0e
+PODFILE CHECKSUM: 43d96fccc6cee24a90747560d0509954a59f96f0
 
 COCOAPODS: 1.14.2

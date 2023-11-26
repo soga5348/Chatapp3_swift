@@ -7,8 +7,8 @@
 
 import Foundation
 import Firebase
-import FirebaseUI
 import SDWebImage
+import FirebaseAuthUI
 
 class DatabaseHelper {
     
@@ -49,33 +49,44 @@ class DatabaseHelper {
         })
     }
     
-    func chatDataListener(roomID:String,result:@escaping([ChatText]) -> Void){
-        db.collection("room").document(roomID).collection("chat").order(by: "time").addSnapshotListener({
-            (querySnapshot, error) in
-            if error == nil{
-                var chatList:[ChatText] = []
-                for doc in querySnapshot!.documents{
-                    let data = doc.data()
-                    guard let text = data["text"] as! String? else { break }
-                    guard let userID = data["userID"] as! String? else { break }
-                    chatList.append(ChatText(text: text, userID: userID))
-                }
-                result(chatList)
-            }
-        })
-    }
-    
     func resisterUserInfo(name:String,image:UIImage){
         db.collection("user").document(uid).setData(["name":name])
         let resized = image.resize(toWidth: 300)
+        let imgData = NSData(data: resized!.jpegData(compressionQuality: 1)!)
+        let imageSize: Int = imgData.count
+        print("actual size of image in KB: %f ", Double(imageSize) / 1000.0)
         guard let imageData = resized!.jpegData(compressionQuality:1) else { return }
-        storage.child("image/\(uid).jpeg").putData(imageData, metadata: nil)
+        storage.child("image/\(uid).jpeg").putData(imageData, metadata: nil){
+            (metaData, err) in
+            if let error = err {
+                print("upload error:\(error)")
+                return
+            }
+        }
     }
     
-    func getImage(userID:String,imageView:UIImageView){
+    func getImage(userID: String, imageView: UIImageView) {
         let imageRef = storage.child("image/"+userID+".jpeg")
-        imageView.sd_setImage(with: imageRef)
+        
+        // Firebase Storage からダウンロード URL を取得
+        imageRef.downloadURL { (url, error) in
+            if let error = error {
+                print("Error getting download URL: \(error.localizedDescription)")
+                return
+            }
+            
+            if let downloadURL = url {
+                // ダウンロード URL を使用してイメージを表示
+                imageView.sd_setImage(with: downloadURL, placeholderImage: nil) { (image, error, cacheType, imageURL) in
+                    if error != nil {
+                        print("Error loading image: \(error!.localizedDescription)")
+                    }
+                }
+            }
+        }
     }
+
+
     
     func getUserInfo(userID:String,result:@escaping(String) -> Void){
         db.collection("user").document(userID).getDocument(completion: {
@@ -92,9 +103,38 @@ class DatabaseHelper {
             }
         })
     }
+    
+    func createRoom(userID:String){
+        db.collection("room").addDocument(data: ["user":[userID,uid]])
+    }
+
+    func sendChatMessage(roomID:String,text:String){
+        db.collection("room").document(roomID).collection("chat").addDocument(data: ["userID":uid,"text":text,"time":time(nil)])
+    }
+    
+    func chatDataListener(roomID:String,result:@escaping([ChatText]) -> Void){
+        db.collection("room").document(roomID).collection("chat").order(by: "time").addSnapshotListener({
+            (querySnapshot, error) in
+            if error == nil{
+                var chatList:[ChatText] = []
+                for doc in querySnapshot!.documents{
+                    let data = doc.data()
+                    guard let text = data["text"] as! String? else { break }
+                    guard let userID = data["userID"] as! String? else { break }
+                    chatList.append(ChatText(text: text, userID: userID))
+                }
+                result(chatList)
+            }
+        })
+    }
 }
 
 struct ChatRoom {
     let roomID:String
+    let userID:String
+}
+
+struct ChatText {
+    let text:String
     let userID:String
 }
