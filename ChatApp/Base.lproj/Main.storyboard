@@ -63,7 +63,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="＋" id="acA-HN-k0U">
                             <connections>
-                                <segue destination="X4c-xq-Qwt" kind="show" id="26D-gB-wSW"/>
+                                <segue destination="X4c-xq-Qwt" kind="show" id="rhA-ka-ZwR"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -150,7 +150,6 @@
                     <navigationItem key="navigationItem" title="友達追加" id="T2c-GK-bcI"/>
                     <connections>
                         <outlet property="idField" destination="3Ib-Rf-eB3" id="7b2-ge-SSY"/>
-                        <outlet property="idLabel" destination="YYi-7R-alf" id="oW7-Gl-O5A"/>
                         <outlet property="qrView" destination="nNn-b2-Kbj" id="7SG-yy-oIR"/>
                         <segue destination="yP6-DJ-yxj" kind="presentation" id="xGI-yS-hi5"/>
                     </connections>
